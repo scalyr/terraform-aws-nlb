@@ -64,7 +64,7 @@ resource "aws_lb_target_group" "default" {
     enabled             = var.health_check_enabled
     port                = local.health_check_port
     protocol            = local.health_check_protocol
-    path                = local.health_check_protocol == "HTTP" ? var.health_check_path : null
+    path                = var.health_check_path
     healthy_threshold   = var.health_check_threshold
     unhealthy_threshold = var.health_check_threshold
     interval            = var.health_check_interval
